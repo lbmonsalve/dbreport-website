@@ -4,7 +4,7 @@
 
 Is a [Xojo/(Real Basic)](http://www.xojo.com) component for reports.
 
-[See on web](http://dbreport.lbmsoft.com/) by Bernardo Monsalve.
+[See here](http://dbreport.lbmsoft.com/) by Bernardo Monsalve.
 
 ## Introduction
 
@@ -242,7 +242,7 @@ rpt.SubReportAdd(sRpt)
 
 ---
 
-## Tutorial: Basic usage
+## Tutorial: Basic
 
 This tutorial is basic use of DBReport. The goal is create two buttons, one for designer and other for print a report. 
 
@@ -268,8 +268,6 @@ This tutorial is basic use of DBReport. The goal is create two buttons, one for 
 
 A video show an example [here](http://youtu.be/dA81VKjqq38).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dA81VKjqq38" frameborder="0" allowfullscreen></iframe>
-
 ### Code for Designer button
 
 ```vb
@@ -292,7 +290,7 @@ Dim rpt As New DBReport(f, r)
 rpt.Print
 ```
 
-## Tutorial: Add reports to your apps
+## Tutorial: Add reports
 
 This tutorial adds a report to existing app. The goal is create a menuItem for design and print. Use the EddiesElectronics desktop app, On "Project chooser" window select Examples, "Sample Applications"/EddiesElectronics/Desktop folder and open EEDesktop.xojo_binary_project file. 
 
@@ -322,8 +320,6 @@ This tutorial adds a report to existing app. The goal is create a menuItem for d
 17. Click on "Print customers" from File menu.
 
 A video show an example [here](http://youtu.be/haNjPzOcc6Q). 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/haNjPzOcc6Q" frameborder="0" allowfullscreen></iframe>
 
 ### Code for Designer
 
@@ -361,15 +357,13 @@ A template is just a report definition previously saved witch is imported in des
 
 A video show an example [here](http://youtu.be/xZh28r1KipU). 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xZh28r1KipU" frameborder="0" allowfullscreen></iframe>
-
 ### Code for Designer
 
 ```vb
 rpt.Designer "{""ShowExpImpBtn"": True}"
 ```
 
-## Tutorial: Store a report definition in database field
+## Tutorial: Store in database
 
 In this tutorial a database is used for store report definition. The goal is save and retrieve a report definition from a column table of database.
 
@@ -394,8 +388,6 @@ In this tutorial a database is used for store report definition. The goal is sav
 12. Select "Template.xml" from desktop. 
 
 A video show an example [here](http://youtu.be/rPVVFGQiXCA).
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rPVVFGQiXCA" frameborder="0" allowfullscreen></iframe>
 
 ### Code for "Desig. db" button
 
