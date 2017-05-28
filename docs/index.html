@@ -1,1 +1,532 @@
-hola mundo
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="./img/favicon.ico">
+        <title>DBReport</title>
+        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="./css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+        <link href="./css/vs.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/highlight.pack.js"></script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=".">DBReport</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href=".">Home</a>
+                    </li>
+                    <li >
+                        <a href="classes/">Classes</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="release/">Release Notes</a>
+</li>
+                            
+<li >
+    <a href="license/">License</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="classes/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#dbreport">DBReport</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#main-features">Main features</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#adding-the-component">Adding the component</a></li>
+            <li><a href="#report-structure">Report structure</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#tutorial-basic-usage">Tutorial: Basic usage</a></li>
+            <li><a href="#tutorial-add-reports-to-your-apps">Tutorial: Add reports to your apps</a></li>
+            <li><a href="#tutorial-using-templates">Tutorial: Using templates</a></li>
+            <li><a href="#tutorial-store-a-report-definition-in-database-field">Tutorial: Store a report definition in database field</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#credits">Credits</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="dbreport">DBReport</h1>
+<hr />
+<p>Is a <a href="http://www.xojo.com">Xojo/(Real Basic)</a> component for reports.</p>
+<p><a href="http://dbreport.lbmsoft.com/">See on web</a> by Bernardo Monsalve.</p>
+<h2 id="introduction">Introduction</h2>
+<p>DBReport is a Xojo (formerly known as Realbasic) component to create, edit and print reports in runtime; unlike Xojo Report which is good enough for simple reporting from databases, however don’t have an editor in runtime, formulas, parameters and other features. </p>
+<h2 id="main-features">Main features</h2>
+<ul>
+<li>Edit report in runtime. </li>
+<li>Report definition to .xml or String (to save in a DB field). </li>
+<li>Preview of report. </li>
+<li>View dataset of records. </li>
+<li>Width, height, margins set or import from printer. </li>
+<li>Report Header, Report Footer, Page Header, Pager Footer and group bands. </li>
+<li>Labels, fields, lines, rectangles, images, charts (bar, line,pie), barcodes. </li>
+<li>Sum, count and subtotal functions. </li>
+<li>Formulas. </li>
+<li>Parameters. </li>
+<li>SubReports. </li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<p>DBReport is pure Xojo (RealBasic) code, don't need plug-ins (however can use <a href="http://www.monkeybreadsoftware.net/class-barcodegeneratormbs.shtml">BarcodeMBS</a> and <a href="http://www.monkeybreadsoftware.de/xojo/plugin-dynapdf.shtml">DynaPDFMBS</a>), tested from RealStudio 2011r4 to Xojo 2017r1.1. Cocoa framework on MacOS is required. You need a registration code which is obtained (for free or open-source projects) by sending an email to lbmonsalve at outlook.com, otherwise works in DEMO mode.</p>
+<h2 id="adding-the-component">Adding the component</h2>
+<h3 id="adding-component">Adding Component</h3>
+<ol>
+<li>Download the zip file, extract files. </li>
+<li>Open Xojo (RealStudio) project or create one. </li>
+<li>Add DBReport* files from DBReport folder. You can add one-by-one using File→Import or drag'n drop folder or files to project's tab. </li>
+</ol>
+<h3 id="register-the-component">Register the component</h3>
+<p>While the component is not registered works in DEMO mode, which meaning when print it, shows "*demo*" randomly. To register the component, add the next code just one time (perhaps on App.Open event) before use: </p>
+<pre><code class="vb">DBReport.Register= &quot;YOUR REGISTER CODE...&quot;
+</code></pre>
+
+<hr />
+<h2 id="report-structure">Report structure</h2>
+<p>A report consists of bands that have elements which are stored in a definition file or a text string. The report is usually assigned a recordset from database and is printed or displayed on screen. </p>
+<h3 id="bands">Bands</h3>
+<p>To understand how the DBReport works we need to understand the concept of bands. </p>
+<p>A band is a box where we put objects, the most important band is <strong>Detail</strong> which is the only one who can not erase. This (Detail) is printed for each row or record of the RecordSet, eg. if we have 10 rows or records we have 10 bands Detail. </p>
+<p>The band <strong>Page header</strong> is printed first in the top of the page for each page in the report generated. </p>
+<p>The band <strong>Page footer</strong> is printed on the bottom of the page for each page in the report generated. </p>
+<p>The band <strong>Report header</strong> is printed after the band page header on the first page of the report. </p>
+<p>The band <strong>Report footer</strong> is printed just after the last band printed on the final page of the report. </p>
+<p>Group bands are bands that are printed before the band <strong>Detail</strong> like <strong>Group Header</strong> and then like <strong>Group Footer</strong>. They print to change the group (field of a recordset) or at the beginning of the report in the case of Group Header or end of the report in case of Group Footer. You can have as many group bands as needed. </p>
+<h3 id="elements">Elements</h3>
+<p>The objects that can be placed in the bands are: </p>
+<ul>
+<li><strong>Labels</strong>: are texts like “Title Report” or the system date as “#date” or page number like “#pag” or parameters or formulas. </li>
+<li><strong>Fields</strong>: field of Recordset like “name” or “id”. </li>
+<li><strong>Lines</strong>: horizontal, vertical or oblique. </li>
+<li><strong>Rectangles</strong> boxes or rounded rectangles. </li>
+<li><strong>Barcodes</strong>. </li>
+<li><strong>Images</strong>: Can be an image file, parameter or a RecordSet field. </li>
+<li><strong>Charts</strong>: Bar, lines, pie. </li>
+<li><strong>SubReports</strong>. </li>
+</ul>
+<p>Note: Use XojoScript (RBScript) in formulas with “SetValue EXPRESSION” like: </p>
+<pre><code class="vb">SetValue (10+5)* RecNum+ (2* .1* RecNum)
+' or
+SetValue &quot;String&quot;
+' or
+SetValue ElementName* ParameterName
+' or
+SetValue Left(FieldName1, 10)+ &quot; &quot;+ FieldName2
+' or
+If FieldName1.InStr(&quot;cad&quot;)= 0 Then
+    SetValue &quot;No Contains cad&quot;
+Else
+    SetValue &quot;Contains cad&quot;
+End
+</code></pre>
+
+<h3 id="parameters">Parameters</h3>
+<p>A parameter is assigned before calling the Designer or Print (“Logo” is an example, may be called as you want):</p>
+<pre><code class="vb">rpt.Parameter(&quot;Logo&quot;)= PictureObject
+rpt.Parameter(&quot;CompanyName&quot;)= &quot;My Company Name&quot;
+</code></pre>
+
+<h3 id="properties">Properties</h3>
+<p>A property in DBReport is a special data used outside of report for whatever you want, example: save the database name or SQL string. Is used as metadata of report, but not in report itself. </p>
+<pre><code class="vb">rpt.Prop(&quot;sqlString&quot;)= &quot;SELECT * FROM table&quot;
+rpt.Prop(&quot;databaseName&quot;)= &quot;MyDB&quot;
+</code></pre>
+
+<h3 id="xml-definition-file">XML Definition file</h3>
+<p>The definition of report is in XML structure, you can change the extension of file whatever you like. This is an example: </p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;DBReport Version=&quot;1.3.1007&quot;&gt;
+  &lt;SubReport&gt;
+    &lt;Band id=&quot;1&quot; Name=&quot;ReporHeader1&quot; Type=&quot;30&quot;/&gt;
+    &lt;Band id=&quot;2&quot; Name=&quot;Detail&quot; Height=&quot;20&quot;/&gt;
+    &lt;Band id=&quot;3&quot; Name=&quot;ReportFooter1&quot; Type=&quot;40&quot; Height=&quot;58&quot;/&gt;
+    &lt;Element id=&quot;4&quot; Name=&quot;Element1&quot; BandId=&quot;1&quot; Left=&quot;2&quot; Top=&quot;7&quot; Value=&quot;Title of report&quot; OrderToShow=&quot;0&quot;/&gt;
+    &lt;Element id=&quot;5&quot; Name=&quot;Element2&quot; DataField=&quot;name&quot; BandId=&quot;2&quot; Left=&quot;4&quot; Top=&quot;3&quot; Type=&quot;20&quot; OrderToShow=&quot;0&quot;/&gt;
+    &lt;Element id=&quot;6&quot; Name=&quot;Element3&quot; BandId=&quot;1&quot; Left=&quot;455&quot; Top=&quot;11&quot; Value=&quot;#pag&quot; OrderToShow=&quot;1&quot;/&gt;
+    &lt;Element id=&quot;7&quot; Name=&quot;Element4&quot; BandId=&quot;3&quot; Left=&quot;235&quot; Top=&quot;3&quot; Value=&quot;#date&quot; AlignH=&quot;1&quot; OrderToShow=&quot;0&quot;/&gt;
+  &lt;/SubReport&gt;
+&lt;/DBReport&gt;
+</code></pre>
+
+<h3 id="xml-preferences-file">XML Preferences file</h3>
+<p>DBReport saves preferences like position of Designer window or zoom in a preferences.xml file in: SpecialFolder.ApplicationData.Child("DBReport").</p>
+<hr />
+<h2 id="examples">Examples</h2>
+<h3 id="modify-report">Modify report</h3>
+<p>RecordSet variable "rs" must be exist.</p>
+<pre><code class="vb">Dim rpt As New DBReport
+
+Dim f as FolderItem= SpecialFolder.Documents.Child(&quot;DBReport1.xml&quot;)
+rpt.LoadXML(f)
+rpt.RecordSet= rs
+rpt.Designer
+rpt.SaveXML(f)
+</code></pre>
+
+<p>If you want store the definition of report on string variable:</p>
+<pre><code class="vb">Dim rpt As New DBReport
+
+rpt.LoadXML(StringVariable)
+rpt.RecordSet= rs
+rpt.Designer
+StringVariable= rpt.GetXML()
+</code></pre>
+
+<h3 id="print-report">Print report</h3>
+<pre><code class="vb">Dim rpt As DBReport
+Dim f as FolderItem= SpecialFolder.Documents.Child(&quot;DBReport1.xml&quot;)
+
+rpt= New DBReport(f, rs)
+
+rpt.Print
+</code></pre>
+
+<h3 id="preview-report">Preview report</h3>
+<p>The report and RecordSet must be exist and assign RecordSet to report. Add "DBReportPreview" controlContainer to a window, assign report to controlContainer: </p>
+<pre><code class="vb">DBReportPreview1.Report(rptVariable)
+</code></pre>
+
+<h3 id="other-form-to-use">Other form to use</h3>
+<p>DBReportDesignerControl and DBReportPreview are ControlContainers, you can place on a Window, set it and used like another control eg. TextField or TextArea. </p>
+<p>You can add DBReportDesignerControl to a window and set report with: <code>DBReportDesignerControl1.Report(rpt)</code>, you need save the changes with a button with action like: <code>rpt.SaveXML(f)</code>. Maybe another button for print. </p>
+<p>Also you can create reports by coding:</p>
+<pre><code class="vb">Dim sRpt As New DBReportSubReport
+
+Dim bnd As New DBReportBand
+bnd.Name= &quot;PageHeader&quot;
+bnd.Type= Int32(DBReportBand.BandType.PageHeader)
+sRpt.BandAdd(bnd)
+
+Dim ele As New DBReportElement
+ele.BandId= bnd.Id
+ele.Type= Int32(DBReportElement.ElementType.Label)
+ele.Value= &quot;Title&quot;
+sRpt.ElementAdd(ele)
+
+bnd= New DBReportBand
+bnd.Name= &quot;Detail1&quot;
+bnd.Type= Int32(DBReportBand.BandType.Detail)
+bnd.Height= 20
+sRpt.BandAdd(bnd)
+
+ele= New DBReportElement
+ele.BandId= bnd.Id
+ele.Type= Int32(DBReportElement.ElementType.Field)
+ele.DataField= &quot;name&quot;
+ele.Left= 30
+ele.Top= 1
+ele.Width= 300
+ele.HeightExpand= True
+sRpt.ElementAdd(ele)
+
+bnd= New DBReportBand
+bnd.Name= &quot;PageFooter&quot;
+bnd.Type= Int32(DBReportBand.BandType.PageFooter)
+bnd.Height= 58
+sRpt.BandAdd(bnd)
+
+ele= New DBReportElement
+ele.BandId= bnd.Id
+ele.Type= Int32(DBReportElement.ElementType.Label)
+ele.Value= &quot;#pag&quot;
+sRpt.ElementAdd(ele)
+
+Dim rpt As New DBReport
+rpt.SubReportAdd(sRpt)
+</code></pre>
+
+<hr />
+<h2 id="tutorial-basic-usage">Tutorial: Basic usage</h2>
+<p>This tutorial is basic use of DBReport. The goal is create two buttons, one for designer and other for print a report. </p>
+<h3 id="requirements_1">Requirements</h3>
+<ul>
+<li>DBReport component. </li>
+<li>A sample SQLite database (sakila database is used for this tutorial, is found in <a href="http://goo.gl/xhUoeb">downloaded</a> file). </li>
+</ul>
+<h3 id="walkthrough">Walkthrough</h3>
+<ol>
+<li>Create a project. </li>
+<li>Add DBReport component. </li>
+<li>Add SQLite database. </li>
+<li>Add a button, change caption to "Designer". </li>
+<li>Add code for Designer to Action event. </li>
+<li>Add a button, change caption to "Print". </li>
+<li>Add code for Print to Action event. </li>
+<li>Run app. </li>
+<li>Click on Designer button. </li>
+<li>Add labels and fields to report. </li>
+<li>Close designer window. </li>
+<li>Click on Print button. </li>
+</ol>
+<p>A video show an example <a href="http://youtu.be/dA81VKjqq38">here</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dA81VKjqq38" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="code-for-designer-button">Code for Designer button</h3>
+<pre><code class="vb">Dim f As FolderItem= SpecialFolder.Desktop.Child(&quot;DBReportTut01.xml&quot;)
+Dim r As Recordset= sakila.SQLSelect(&quot;SELECT * FROM customer&quot;)
+
+Dim rpt As New DBReport(f, r)
+rpt.Designer
+rpt.SaveXML(f)
+</code></pre>
+
+<h3 id="code-for-print-button">Code for Print button</h3>
+<pre><code class="vb">Dim f As FolderItem= SpecialFolder.Desktop.Child(&quot;DBReportTut01.xml&quot;)
+Dim r As Recordset= sakila.SQLSelect(&quot;SELECT * FROM customer&quot;)
+
+Dim rpt As New DBReport(f, r)
+
+rpt.Print
+</code></pre>
+
+<h2 id="tutorial-add-reports-to-your-apps">Tutorial: Add reports to your apps</h2>
+<p>This tutorial adds a report to existing app. The goal is create a menuItem for design and print. Use the EddiesElectronics desktop app, On "Project chooser" window select Examples, "Sample Applications"/EddiesElectronics/Desktop folder and open EEDesktop.xojo_binary_project file. </p>
+<h3 id="requirements_2">Requirements</h3>
+<ul>
+<li>DBReport component. </li>
+<li>EEDesktop example app.</li>
+</ul>
+<h3 id="walkthrough_1">Walkthrough</h3>
+<ol>
+<li>Open EEDesktop app from "Project chooser" window. </li>
+<li>Add DBReport component. </li>
+<li>Add menuItem to File menu on MainMenuBar. </li>
+<li>Change Name to "FilePrintCustomers". </li>
+<li>Change Text to "Print customers". </li>
+<li>Navigate to "Menu Handlers" from CustomerDetailWindow. </li>
+<li>Add "Menu Handler" event. </li>
+<li>Choose FilePrintCustomers from MenuItem name. </li>
+<li>Add code for Designer. </li>
+<li>Run App. </li>
+<li>Click on "Print customers" from File menu. </li>
+<li>Add labels and fields to report. </li>
+<li>Close Designer window. </li>
+<li>Close App. </li>
+<li>Add rpt.Print to FilePrintCustomers event. </li>
+<li>Run App. </li>
+<li>Click on "Print customers" from File menu.</li>
+</ol>
+<p>A video show an example <a href="http://youtu.be/haNjPzOcc6Q">here</a>. </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/haNjPzOcc6Q" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="code-for-designer">Code for Designer</h3>
+<pre><code class="vb">Dim f As FolderItem= SpecialFolder.Desktop.Child(&quot;DBReportTut02.xml&quot;)
+Dim r As Recordset= App.Orders.FindCustomersByName
+
+Dim rpt As New DBReport(f, r)
+rpt.Designer
+rpt.SaveXML(f)
+</code></pre>
+
+<h2 id="tutorial-using-templates">Tutorial: Using templates</h2>
+<p>This is a tutorial about how use templates in DBReport. The goal is create a report based on previous saved report. </p>
+<p>A template is just a report definition previously saved witch is imported in designer. Is useful for save time with similar reports. </p>
+<h3 id="requirements_3">Requirements</h3>
+<ul>
+<li>Basic usage tutorial.</li>
+</ul>
+<h3 id="walkthrough_2">Walkthrough</h3>
+<ol>
+<li>Rename "DBReportTut01.xml" file to "Template.xml". </li>
+<li>Open Tutorial01 project. </li>
+<li>Open Action event of Designer button. </li>
+<li>Change rpt.Designer line. </li>
+<li>Save project as Tutorial03. </li>
+<li>Run App. </li>
+<li>Click on Designer button. </li>
+<li>Click on Export button. </li>
+<li>Choose "Import" from popup menu. </li>
+<li>Select "Template.xml" from desktop. </li>
+</ol>
+<p>A video show an example <a href="http://youtu.be/xZh28r1KipU">here</a>. </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xZh28r1KipU" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="code-for-designer_1">Code for Designer</h3>
+<pre><code class="vb">rpt.Designer &quot;{&quot;&quot;ShowExpImpBtn&quot;&quot;: True}&quot;
+</code></pre>
+
+<h2 id="tutorial-store-a-report-definition-in-database-field">Tutorial: Store a report definition in database field</h2>
+<p>In this tutorial a database is used for store report definition. The goal is save and retrieve a report definition from a column table of database.</p>
+<h3 id="requirements_4">Requirements</h3>
+<ul>
+<li>Basic usage tutorial. </li>
+<li>A sakila_rpts SQLite database (is found in <a href="http://goo.gl/xhUoeb">downloaded</a> file). </li>
+</ul>
+<h3 id="walkthrough_3">Walkthrough</h3>
+<ol>
+<li>Open Tutorial01 project. </li>
+<li>Add sakila_rpts database. </li>
+<li>Add a button, change caption to "Desig. db". </li>
+<li>Add code for Desig. db to Action event. </li>
+<li>Add a button, change caption to "Print db". </li>
+<li>Add code for Print db to Action event. </li>
+<li>Save project as Tutorial04 </li>
+<li>Run app. </li>
+<li>Click on Desig. db button. </li>
+<li>Click on Export button. </li>
+<li>Choose "Import" from popup menu. </li>
+<li>Select "Template.xml" from desktop. </li>
+</ol>
+<p>A video show an example <a href="http://youtu.be/rPVVFGQiXCA">here</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rPVVFGQiXCA" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="code-for-desig-db-button">Code for "Desig. db" button</h3>
+<pre><code class="vb">Dim s As String
+Dim i As Boolean
+Dim r As RecordSet= sakila_rpts.SQLSelect(&quot;SELECT * FROM  reports WHERE name= 'Tutorial04';&quot;)
+
+If r&lt;&gt; Nil Then
+  If Not r.EOF Then
+    s= r.Field(&quot;definition&quot;).StringValue
+  Else
+    i= True //INSERT
+  End If
+End If
+
+r= sakila.SQLSelect(&quot;SELECT * FROM customer&quot;)
+
+Dim rpt As New DBReport(s, r)
+rpt.Designer &quot;{&quot;&quot;ShowExpImpBtn&quot;&quot;: True}&quot;
+
+// Prepare statement
+Dim p As PreparedSQLStatement
+
+If i Then
+  p= sakila_rpts.Prepare(&quot;INSERT INTO reports (group_name, name, definition) VALUES ('Tutorials', ?, ?)&quot;)
+Else
+  p= sakila_rpts.Prepare(&quot;UPDATE reports SET name= ? WHERE definition= ?&quot;)
+End If
+p.BindType(0, SQLitePreparedStatement.SQLITE_TEXT)
+p.BindType(1, SQLitePreparedStatement.SQLITE_TEXT)
+
+p.SQLExecute(&quot;Tutorial04&quot;, rpt.GetXML)
+</code></pre>
+
+<h3 id="code-for-printer-db-button">Code for "Printer db" button</h3>
+<pre><code class="vb">Dim s As String
+Dim r As RecordSet= sakila_rpts.SQLSelect(&quot;SELECT * FROM  reports WHERE name= 'Tutorial04';&quot;)
+
+If r&lt;&gt; Nil Then
+  s= r.Field(&quot;definition&quot;).StringValue
+End If
+
+r= sakila.SQLSelect(&quot;SELECT * FROM customer&quot;)
+
+Dim rpt As New DBReport(s, r)
+
+rpt.Print
+</code></pre>
+
+<hr />
+<h2 id="community">Community</h2>
+<ul>
+<li><a href="http://lbmonsalve.wordpress.com/">Blog</a></li>
+</ul>
+<h2 id="support">Support</h2>
+<ul>
+<li><a href="https://bitbucket.org/lbmonsalve/dbreport/issues">Issue tracker</a></li>
+</ul>
+<h2 id="credits">Credits</h2>
+<p>Many people helped me in this project: Rodrigo Erazo, Carlos Hernán Muñoz, Andy Marshman, Wayne Golding, Peter Fargo, Andre Kuiper, Rolf Genster (German corrections), the rhCharts guy, Alwaysbusy's corner (gradient and other stuff), and all of request a demo. </p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '.';</script>
+        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+        <script src="./js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 0.16.3
+Build Date UTC : 2017-05-28 02:38:24
+-->
