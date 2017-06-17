@@ -1,2 +1,2 @@
 # dbreport
-Xojo component for reports
+Xojo component for reports website

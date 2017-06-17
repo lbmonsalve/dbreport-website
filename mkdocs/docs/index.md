@@ -4,7 +4,7 @@
 
 Is a [Xojo/(Real Basic)](http://www.xojo.com) component for reports.
 
-[See here](http://dbreport.lbmsoft.com/) by Bernardo Monsalve.
+[See here](http://dbreport.lbmsoft.com/), download [here](http://goo.gl/xhUoeb) by Bernardo Monsalve.
 
 ## Introduction
 
