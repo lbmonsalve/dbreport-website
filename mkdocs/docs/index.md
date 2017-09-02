@@ -448,7 +448,7 @@ rpt.Print
 
 ## Support
 
-* [Issue tracker](https://bitbucket.org/lbmonsalve/dbreport/issues)
+* [Issue tracker](https://github.com/lbmonsalve/dbreport/issues)
 
 ## Credits
 
