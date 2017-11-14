@@ -16,4 +16,4 @@ markdown_extensions:
     - toc:
         permalink: ♥
         separator: "_"
-    - admonition: 
+    - admonition:

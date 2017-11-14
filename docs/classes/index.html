@@ -102,17 +102,580 @@
 
 <h1 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">♥</a></h1>
 <h2 id="dbreport">DBReport<a class="headerlink" href="#dbreport" title="Permanent link">♥</a></h2>
+<p>Used to print or render reports. </p>
 <h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#CacheInRecords">CacheInRecords</a></td>
+<td><a href="#ListBox">ListBox</a></td>
+<td><a href="#Name">Name</a></td>
+</tr>
+<tr>
+<td><a href="#PictureQualityAllImagesPDF">PictureQualityAllImagesPDF</a></td>
+<td><a href="#PrinterDialog">PrinterDialog</a></td>
+<td><a href="#PrinterSettings">PrinterSettings</a></td>
+</tr>
+<tr>
+<td><a href="#RecordSet">RecordSet</a></td>
+<td><a href="#SearchHighlightColor">SearchHighlightColor</a></td>
+<td><a href="#UID">UID</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="cacheinrecords">CacheInRecords<a class="headerlink" href="#cacheinrecords" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.CacheInRecords= 500
+</code></pre>
+
+<p><strong>Integer</strong> - Records cached in memory, default= 1000. </p>
+<p>DBReport cached pictures of pages in memory for CacheInRecords number, after that, pictures are saved in temporary files. </p>
+<p></br></p>
+<h4 id="listbox">ListBox<a class="headerlink" href="#listbox" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.ListBox= myListbox
+' or
+myListbox= rpt.Listbox
+</code></pre>
+
+<p><strong>ListBox</strong> - Set or get the listbox, use as recordset, the columns heading is used as field name. </p>
+<p></br></p>
+<h4 id="name">Name<a class="headerlink" href="#name" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.Name= &quot;Customers list&quot;
+' or
+StringVariable= rpt.Name
+</code></pre>
+
+<p><strong>String</strong> - Used for set or get the name of report, appears on title of window designer. </p>
+<p></br></p>
+<h4 id="picturequalityallimagespdf">PictureQualityAllImagesPDF<a class="headerlink" href="#picturequalityallimagespdf" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.PictureQualityAllImagesPDF= Picture.QualityMedium
+' Or
+rpt.PictureQualityAllImagesPDF= 25 // low quality
+</code></pre>
+
+<p><strong>Integer</strong> - Set the quality for all images on PDF file, see <a href="http://docs.xojo.com/index.php/Picture">JPEG quality</a>.</p>
+<p></br></p>
+<h4 id="printerdialog">PrinterDialog<a class="headerlink" href="#printerdialog" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.PrinterDialog= False
+</code></pre>
+
+<p><strong>Boolean</strong> - If shows printer dialog before print. by default is true.</p>
+<p></br></p>
+<h4 id="printersettings">PrinterSettings<a class="headerlink" href="#printersettings" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.PrinterSettings= PageSetup.SetupString
+</code></pre>
+
+<p><strong>String</strong> - populate PrinterSetup options. see <a href="http://docs.xojo.com/index.php/PrinterSetup.SetupString">SetupString</a></p>
+<p></br></p>
+<h4 id="recordset">RecordSet<a class="headerlink" href="#recordset" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.RecordSet= db.SQLSelect(&quot;SELECT * FROM sqlite_master&quot;)
+' or
+Dim rs As Recordset= rpt.RecordSet
+</code></pre>
+
+<p><strong>Recordset</strong> - Set or get recordset object. </p>
+<p></br></p>
+<h4 id="searchhighlightcolor">SearchHighlightColor<a class="headerlink" href="#searchhighlightcolor" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.SearchHighlightColor= &amp;cFFDFDF7F
+</code></pre>
+
+<p><strong>Color</strong> - Set the color for Highlight when search on Preview. Default= &amp;cFFFF007F </p>
+<p></br></p>
+<h4 id="uid">UID<a class="headerlink" href="#uid" title="Permanent link">♥</a></h4>
+<pre><code class="vb">StringVariable= rpt.UID
+</code></pre>
+
+<p><strong>String</strong> - Get the unique identification of report. </p>
 <h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#Changed">Changed</a></td>
+<td><a href="#Designer">Designer</a></td>
+<td><a href="#GetXML">GetXML</a></td>
+</tr>
+<tr>
+<td><a href="#LoadXML">LoadXML</a></td>
+<td><a href="#Page">Page</a></td>
+<td><a href="#Parameter">Parameter</a></td>
+</tr>
+<tr>
+<td><a href="#Print">Print</a></td>
+<td><a href="#PrintQuick">PrintQuick</a></td>
+<td><a href="#Prop">Prop</a></td>
+</tr>
+<tr>
+<td><a href="#PropCount">PropCount</a></td>
+<td><a href="#RenderToPDF">RenderToPDF</a></td>
+<td><a href="#SaveXML">SaveXML</a></td>
+</tr>
+<tr>
+<td><a href="#SubReport">SubReport</a></td>
+<td><a href="#SubReportAdd">SubReportAdd</a></td>
+<td><a href="#SubReportDel">SubReportDel</a></td>
+</tr>
+<tr>
+<td><a href="#SubReportsClear">SubReportsClear</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">♥</a></h4>
+<pre><code class="vb">If rpt.Changed Then
+    MsgBox &quot;Changed!&quot;
+End If
+</code></pre>
+
+<p><strong>Boolean</strong> - If report has changed (after use Designer).</p>
+<p></br></p>
+<h4 id="designer">Designer<a class="headerlink" href="#designer" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.Designer(showModal As Boolean = True)
+</code></pre>
+
+<pre><code class="vb">rpt.Designer(settings As String)
+</code></pre>
+
+<p>Shows DBReportDesignerWindow window aka <strong>Designer</strong> window.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">rpt.Designer(&quot;{&quot;&quot;ShowExpImpBtn&quot;&quot;: True, &quot;&quot;ShowUpdateBtn&quot;&quot;: True}&quot;)
+</code></pre>
+
+<p>The settings parameter is a JSON string eg. <strong>ShowExpImpBtn:</strong> shows ExportImport button, <strong>ShowUpdateBtn:</strong> shows Update button </p>
+<p></br></p>
+<h4 id="getxml">GetXML<a class="headerlink" href="#getxml" title="Permanent link">♥</a></h4>
+<pre><code class="vb">StringVariable= rpt.GetXML
+</code></pre>
+
+<p><strong>String</strong> - Get XML definition as string. </p>
+<p></br></p>
+<h4 id="loadxml">LoadXML<a class="headerlink" href="#loadxml" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.LoadXML(f As FolderItem)
+</code></pre>
+
+<pre><code class="vb">rpt.LoadXML(str As String)
+</code></pre>
+
+<p>Load report definition. </p>
+<p></br></p>
+<h4 id="page">Page<a class="headerlink" href="#page" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.Page(ByRef PageNum As Integer, Scale As Double = 1, Optional Search As String = &quot;&quot;, _
+    Optional CachePages As Boolean = False, Optional PageBackColor As Color = &amp;cFCFCFC00)
+</code></pre>
+
+<p><strong>Picture</strong> - Returns a Picture of page.</p>
+<p>PageNum is a number of page rendered, if the number is greater PageNum is changed to last page. Scale is the scale of picture. Search is a string to search and highlighted. CachePages cached pictures if you need get the picture again. PageBackColor is the backColor of picture. </p>
+<p></br></p>
+<h4 id="parameter">Parameter<a class="headerlink" href="#parameter" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.Parameter(Name As String, Assigns Value As Variant)
+</code></pre>
+
+<pre><code class="vb">rpt.Parameter(Name As String) As Variant
+</code></pre>
+
+<p>Set or get parameters to use in report. Must be setting before Print or Design.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">rpt.Parameter(&quot;CompanyName&quot;)= &quot;Acme Inc.&quot;
+rpt.Parameter(&quot;CompanyLogo&quot;)= pictureVariable
+</code></pre>
+
+<p></br></p>
+<h4 id="print">Print<a class="headerlink" href="#print" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.Print
+</code></pre>
+
+<p>Print report. </p>
+<p></br></p>
+<h4 id="printquick">PrintQuick<a class="headerlink" href="#printquick" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.PrintQuick(ShowDialog As Boolean = False)
+</code></pre>
+
+<p>Print without definition. Print low numbers of columns.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">Dim rpt As New DBReport
+rpt.RecordSet= rs
+rpt.PrintQuick
+</code></pre>
+
+<p></br></p>
+<h4 id="prop">Prop<a class="headerlink" href="#prop" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.Prop(Idx As Integer) As String
+</code></pre>
+
+<pre><code class="vb">rpt.Prop(Name As String) As String
+</code></pre>
+
+<pre><code class="vb">rpt.Prop(Name As String, Assigns Value As String)
+</code></pre>
+
+<p>Set or get properties of report. </p>
+<p></br></p>
+<h4 id="propcount">PropCount<a class="headerlink" href="#propcount" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.PropCount() As Integer
+</code></pre>
+
+<p>Get the numbers or properties. </p>
+<p></br></p>
+<h4 id="rendertopdf">RenderToPDF<a class="headerlink" href="#rendertopdf" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.RenderToPDF(f As FolderItem)
+</code></pre>
+
+<p>Create a PDF file of report.</p>
+<p></br></p>
+<h4 id="savexml">SaveXML<a class="headerlink" href="#savexml" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.SaveXML(f As FolderItem, pretty As Boolean = False)
+</code></pre>
+
+<p>Create a XML file of definition. </p>
+<p></br></p>
+<h4 id="subreport">SubReport<a class="headerlink" href="#subreport" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.SubReport(Idx As Integer) As DBReportSubReport
+</code></pre>
+
+<pre><code class="vb">rpt.SubReport(Name As String) As DBReportSubReport
+</code></pre>
+
+<p>Get subreport. Idx start in zero. </p>
+<p></br></p>
+<h4 id="subreportadd">SubReportAdd<a class="headerlink" href="#subreportadd" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.SubReportAdd(Rpt As DBReportSubReport)
+</code></pre>
+
+<p>Add subreport to report. </p>
+<p></br></p>
+<h4 id="subreportdel">SubReportDel<a class="headerlink" href="#subreportdel" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.SubReportDel(Name As String)
+</code></pre>
+
+<p>Delete subreport by name.</p>
+<p></br></p>
+<h4 id="subreportsclear">SubReportsClear<a class="headerlink" href="#subreportsclear" title="Permanent link">♥</a></h4>
+<pre><code class="vb">rpt.SubReportsClear
+</code></pre>
+
+<p>Delete all subreports. </p>
 <h3 id="shared_properties">Shared Properties<a class="headerlink" href="#shared_properties" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#BrandName">BrandName</a></td>
+<td><a href="#Errors">Errors</a></td>
+<td><a href="#ErrorsCount">ErrorsCount</a></td>
+</tr>
+<tr>
+<td><a href="#PassCode">PassCode</a></td>
+<td><a href="#PDFObj">PDFObj</a></td>
+<td><a href="#PDFOptions">PDFOptions</a></td>
+</tr>
+<tr>
+<td><a href="#PictureSaveInDefinition">PictureSaveInDefinition</a></td>
+<td><a href="#PreferencesFile">PreferencesFile</a></td>
+<td><a href="#RecordSetEncoding">RecordSetEncoding</a></td>
+</tr>
+<tr>
+<td><a href="#Register">Register</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="brandname">BrandName<a class="headerlink" href="#brandname" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.BrandName= &quot;Your_Brand&quot;
+</code></pre>
+
+<p><strong>String</strong> - Change DBReport brand for you wish.</p>
+<p></br></p>
+<h4 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">♥</a></h4>
+<pre><code class="vb">StringVariable= DBReport.Errors
+</code></pre>
+
+<p><strong>String</strong> - Gets a string with all errors (if any) of report. </p>
+<p></br></p>
+<h4 id="errorscount">ErrorsCount<a class="headerlink" href="#errorscount" title="Permanent link">♥</a></h4>
+<pre><code class="vb">IntegerVariable= DBReport.ErrorsCount
+</code></pre>
+
+<p><strong>Integer</strong> - Gets the numbers of errors of report. </p>
+<p></br></p>
+<h4 id="passcode">PassCode<a class="headerlink" href="#passcode" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.PassCode= &quot;your pass code&quot;
+</code></pre>
+
+<p><strong>String</strong> - Pass code used for encrypt DataExplorer data</p>
+<p></br></p>
+<h4 id="pdfobj">PDFObj<a class="headerlink" href="#pdfobj" title="Permanent link">♥</a></h4>
+<pre><code class="vb">Dim pdf As New DynaPDFMBS // your code
+pdf.SetLicenseKey &quot;Starter&quot; // your code
+' set other pdf options like AddFontSearchPath
+
+' add this code 
+DBReport.PDFObj= pdf // to reuse this object 
+</code></pre>
+
+<p><strong>DynaPDFMBS</strong> - Used for store MBSDynaPDF plugin object.</p>
+<p></br></p>
+<h4 id="pdfoptions">PDFOptions<a class="headerlink" href="#pdfoptions" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.PDFOptions.Value(&quot;Codepage&quot;)= DynaPDFMBS.kcpUnicode // change codepage 
+</code></pre>
+
+<p><strong>Dictionary</strong> - Used for PDF settings.</p>
+<p></br></p>
+<h4 id="picturesaveindefinition">PictureSaveInDefinition<a class="headerlink" href="#picturesaveindefinition" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.PictureSaveInDefinition= False
+</code></pre>
+
+<p><strong>Boolean</strong> - Save picture data <strong>in</strong> definition File (default: True).</p>
+<p></br></p>
+<h4 id="preferencesfile">PreferencesFile<a class="headerlink" href="#preferencesfile" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.PreferencesFile= SpecialFolder.ApplicationData.Child(&quot;yourfile&quot;)
+</code></pre>
+
+<p><strong>FolderItem</strong> - Set preferences folderItem file.</p>
+<p></br></p>
+<h4 id="recordsetencoding">RecordSetEncoding<a class="headerlink" href="#recordsetencoding" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.RecordSetEncoding= Encodings.ASCII
+</code></pre>
+
+<p><strong>TextEncoding</strong> - Set encodings for recordSet.</p>
+<p></br></p>
+<h4 id="register">Register<a class="headerlink" href="#register" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.Register= &quot;Your_register_code&quot;
+</code></pre>
+
+<p><strong>String</strong> - Set register code.</p>
 <h3 id="shared_methods">Shared Methods<a class="headerlink" href="#shared_methods" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#DecryptString">DecryptString</a></td>
+<td><a href="#EncryptString">EncryptString</a></td>
+<td><a href="#PrintOnBackground">PrintOnBackground</a></td>
+</tr>
+<tr>
+<td><a href="#PrintOnBackgroundCurrentPageNumber">PrintOnBackgroundCurrentPageNumber</a></td>
+<td><a href="#Registered">Registered</a></td>
+<td><a href="#RenderToPDFOnBackground">RenderToPDFOnBackground</a></td>
+</tr>
+<tr>
+<td><a href="#RenderToPDFOnBackgroundCurrentPageNumber">RenderToPDFOnBackgroundCurrentPageNumber</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="decryptstring">DecryptString<a class="headerlink" href="#decryptstring" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.DecryptString(Str As String) As String
+</code></pre>
+
+<p><strong>String</strong> - Get a string "decripted", well is more like obfuscate. You can use for gets sensitive properties in report definition. </p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">username= DBReport.DecryptString(rpt.Prop(&quot;username&quot;))
+</code></pre>
+
+<p></br></p>
+<h4 id="encryptstring">EncryptString<a class="headerlink" href="#encryptstring" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.EncryptString(Str As String) As String
+</code></pre>
+
+<p><strong>String</strong> - Get a string "encripted", well is more like obfuscate. You can use for save sensitive properties in report definition. </p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">rpt.Prop(&quot;username&quot;)= DBReport.EncryptString(username)
+</code></pre>
+
+<p></br></p>
+<h4 id="printonbackground">PrintOnBackground<a class="headerlink" href="#printonbackground" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.PrintOnBackground() As Boolean
+</code></pre>
+
+<p>Gets True if are printing the report in background. Used for not close app before print thread is finished. </p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">Function CancelClose(appQuitting as Boolean) As Boolean
+  If DBReport.PrintOnBackground Then
+    MsgBox &quot;Printing...&quot;
+    Return True
+  End
+End Function
+</code></pre>
+
+<pre><code class="vb">DBReport.PrintOnBackground(Rpt As DBReport, Priority As Integer = Thread.LowestPriority)
+</code></pre>
+
+<p>Print a report on background.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">Dim rpt As New DBReport(f, rs)
+
+DBReport.PrintOnBackground rpt
+</code></pre>
+
+<p></br></p>
+<h4 id="printonbackgroundcurrentpagenumber">PrintOnBackgroundCurrentPageNumber<a class="headerlink" href="#printonbackgroundcurrentpagenumber" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.PrintOnBackgroundCurrentPageNumber() As Integer
+</code></pre>
+
+<p>Gets current page number printed in background. Used for feedback.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">System.DebugLog Str(DBReport.PrintOnBackgroundCurrentPageNumber)
+</code></pre>
+
+<p></br></p>
+<h4 id="registered">Registered<a class="headerlink" href="#registered" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.Registered() As Boolean
+</code></pre>
+
+<p>Gets True if DBReport is registered. </p>
+<p></br></p>
+<h4 id="rendertopdfonbackground">RenderToPDFOnBackground<a class="headerlink" href="#rendertopdfonbackground" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.RenderToPDFOnBackground() As Boolean
+</code></pre>
+
+<p>Gets True if are render the report in background. Used for not close app before print thread is finished. </p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">Function CancelClose(appQuitting as Boolean) As Boolean
+  If DBReport.RenderToPDFOnBackground Then
+    MsgBox &quot;REnder to PDF...&quot;
+    Return True
+  End
+End Function
+</code></pre>
+
+<pre><code class="vb">DBReport.RenderToPDFOnBackground(Rpt As DBReport, f As FolderItem, title As String = &quot;&quot;, author As String = &quot;&quot;, _
+subject As String = &quot;&quot;, keywords As String = &quot;&quot;, Priority As Integer = Thread.LowestPriority)
+</code></pre>
+
+<p>Render to PDF a report on background. </p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">Dim rpt As New DBReport(f, rs)
+Dim f As FolderItem= SpecialFolder.Documents.Child(&quot;DBReport.xml&quot;)
+
+DBReport.RenderToPDFOnBackground rpt, f, &quot;My title&quot;, &quot;My author&quot;, &quot;My subject&quot;, &quot;My keywords&quot;
+</code></pre>
+
+<p></br></p>
+<h4 id="rendertopdfonbackgroundcurrentpagenumber">RenderToPDFOnBackgroundCurrentPageNumber<a class="headerlink" href="#rendertopdfonbackgroundcurrentpagenumber" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.RenderToPDFOnBackgroundCurrentPageNumber() As Integer
+</code></pre>
+
+<p>Gets current page number rendered in background. Used for feedback. </p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">System.DebugLog Str(DBReport.RenderToPDFOnBackgroundCurrentPageNumber)
+</code></pre>
+
 <h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">♥</a></h3>
+<h4 id="dbreportconstructorrpt_as_dbreport">DBReport.Constructor(rpt As DBReport)<a class="headerlink" href="#dbreportconstructorrpt_as_dbreport" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.Constructor(rpt As DBReport)
+</code></pre>
+
+<p>Create a new report based in other (Copy constructor). </p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">Dim rpt As DBReport
+'...
+Dim rpt1 As New DBReport(rpt)
+</code></pre>
+
+<p></br></p>
+<h4 id="dbreportconstructorf_as_folderitem">DBReport.Constructor(f As FolderItem)<a class="headerlink" href="#dbreportconstructorf_as_folderitem" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.Constructor(f As FolderItem)
+</code></pre>
+
+<p>Create a report with a file definition.  </p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">Dim rpt As New DBReport(SpecialFolder.Documents.Child(&quot;Template.xml&quot;))
+</code></pre>
+
+<p></br></p>
+<h4 id="dbreportconstructorf_as_folderitem_rs_as_recordset">DBReport.Constructor(f As FolderItem, rs As RecordSet)<a class="headerlink" href="#dbreportconstructorf_as_folderitem_rs_as_recordset" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.Constructor(f As FolderItem, rs As RecordSet)
+</code></pre>
+
+<p>Create a report with file definition and recordset.  </p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">Dim f As FolderItem= SpecialFolder.Documents.Child(&quot;MyReport.xml&quot;)
+Dim rs As RecordSet= App.Db.SQLSelect(&quot;SELECT * FROM users&quot;)
+
+Dim rpt As DBReport(f, rs)
+</code></pre>
+
+<p></br></p>
+<h4 id="dbreportconstructorstr_as_string">DBReport.Constructor(str As String)<a class="headerlink" href="#dbreportconstructorstr_as_string" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.Constructor(str As String)
+</code></pre>
+
+<p>Create a report with a string as definition. </p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">Dim rpt As New DBReport(kReportConstant)
+</code></pre>
+
+<p></br></p>
+<h4 id="dbreportconstructorstr_as_string_rs_as_recordset">DBReport.Constructor(str As String, rs As RecordSet)<a class="headerlink" href="#dbreportconstructorstr_as_string_rs_as_recordset" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReport.Constructor(str As String, rs As RecordSet)
+</code></pre>
+
+<p>Create a report with string as definition and recordset. </p>
+<p><strong>Example:</strong></p>
+<pre><code class="vb">Dim rs As RecordSet= App.Db.SQLSelect(&quot;SELECT * FROM users&quot;)
+
+Dim rpt As DBReport(kReportDef, rs)
+</code></pre>
+
 <h3 id="class_constants">Class Constants<a class="headerlink" href="#class_constants" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version</td>
+<td>String</td>
+<td>ie. 1.4.4407</td>
+</tr>
+<tr>
+<td>ReportColumnsOrder</td>
+<td>Integer</td>
+<td>LeftToRightThenDown=1</br>DownThenLeftToRight=2</td>
+</tr>
+<tr>
+<td>ReportUnits</td>
+<td>Integer</td>
+<td>Pixels=1</br>Milimeters=2</br>Inches=3</td>
+</tr>
+</tbody>
+</table>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">♥</a></h3>
 <p>Modify report:</p>
-<pre><code class="vb">Dim rpt As New DBReport
+<pre><code class="vb">Dim f as FolderItem= SpecialFolder.Documents.Child(&quot;DBReport1.xml&quot;)
 
-Dim f as FolderItem= SpecialFolder.Documents.Child(&quot;DBReport1.xml&quot;)
+Dim rpt As New DBReport
 rpt.LoadXML f
 rpt.RecordSet= rs // rs RecordSet must be exist
 rpt.Designer
@@ -137,10 +700,361 @@ rpt.Print
 
 <hr />
 <h2 id="dbreportdesignercontrol">DBReportDesignerControl<a class="headerlink" href="#dbreportdesignercontrol" title="Permanent link">♥</a></h2>
+<p>Used to embed in a Window or in another control. </p>
+<h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#NameChange">NameChange</a></td>
+<td><a href="#Update">Update</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="namechange">NameChange<a class="headerlink" href="#namechange" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportDesignerControl1.NameChange()
+</code></pre>
+
+<p>Fires when the name of the report property has changed.</p>
+<p></br></p>
+<h4 id="update">Update<a class="headerlink" href="#update" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportDesignerControl.Update()
+</code></pre>
+
+<p>Fires when click on <strong>Update</strong> button. </p>
+<h3 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#GetReport">GetReport</a></td>
+<td><a href="#PreferencesLoad">PreferencesLoad</a></td>
+<td><a href="#PreferencesSave">PreferencesSave</a></td>
+</tr>
+<tr>
+<td><a href="#Report">Report</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="getreport">GetReport<a class="headerlink" href="#getreport" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportDesignerControl.GetReport() As DBReport
+</code></pre>
+
+<p>Gets the report object. </p>
+<p></br></p>
+<h4 id="preferencesload">PreferencesLoad<a class="headerlink" href="#preferencesload" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportDesignerControl.PreferencesLoad(Win As DBReportDesignerWindow)
+</code></pre>
+
+<p>Load preferences and apply to window. </p>
+<p></br></p>
+<h4 id="preferencessave">PreferencesSave<a class="headerlink" href="#preferencessave" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportDesignerControl.PreferencesSave()
+</code></pre>
+
+<p>Save preferences.</p>
+<p></br></p>
+<h4 id="report">Report<a class="headerlink" href="#report" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportDesignerControl.Report(rpt As DBReport)
+</code></pre>
+
+<p>Set report to control.</p>
+<h3 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version</td>
+<td>String</td>
+<td>1.4.4407</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="dbreportpreview">DBReportPreview<a class="headerlink" href="#dbreportpreview" title="Permanent link">♥</a></h2>
+<p>Used to embed in a Window or in another control. </p>
+<h3 id="events_1">Events<a class="headerlink" href="#events_1" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#Action">Action</a></td>
+<td><a href="#PageFinished">PageFinished</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="action">Action<a class="headerlink" href="#action" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview.Action(element As String, value As String, reportName As String, subReportName As String)
+</code></pre>
+
+<p>Fires when HotSpot is clicked. You can handle inspecting string variables. </p>
+<p></br></p>
+<h4 id="pagefinished">PageFinished<a class="headerlink" href="#pagefinished" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview.PageFinished()
+</code></pre>
+
+<p>Fires when the page is shows. </p>
+<h3 id="properties_1">Properties<a class="headerlink" href="#properties_1" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#HotSpotEnable">HotSpotEnable</a></td>
+<td><a href="#ShowToolBar">ShowToolBar</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="hotspotenable">HotSpotEnable<a class="headerlink" href="#hotspotenable" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview1.HotSpotEnable= True
+</code></pre>
+
+<p><strong>Boolean</strong> - Set if hotSpots are enabled, default= False. </p>
+<p></br></p>
+<h4 id="showtoolbar">ShowToolBar<a class="headerlink" href="#showtoolbar" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview1.ShowToolBar= False
+</code></pre>
+
+<p><strong>Boolean</strong> - Set if toolBar are shows, default= True.</p>
+<h3 id="methods_2">Methods<a class="headerlink" href="#methods_2" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#CurrentPage">CurrentPage</a></td>
+<td><a href="#MoveFirstPage">MoveFirstPage</a></td>
+<td><a href="#MoveLastPage">MoveLastPage</a></td>
+</tr>
+<tr>
+<td><a href="#MoveNextPage">MoveNextPage</a></td>
+<td><a href="#MovePreviousPage">MovePreviousPage</a></td>
+<td><a href="#MoveToPage">MoveToPage</a></td>
+</tr>
+<tr>
+<td><a href="#Print_1">Print</a></td>
+<td><a href="#Report">Report</a></td>
+<td><a href="#ShowSearchPanel">ShowSearchPanel</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="currentpage">CurrentPage<a class="headerlink" href="#currentpage" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview.CurrentPage() As Integer
+</code></pre>
+
+<p>Return current page number. </p>
+<p></br></p>
+<h4 id="movefirstpage">MoveFirstPage<a class="headerlink" href="#movefirstpage" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview.MoveFirstPage()
+</code></pre>
+
+<p>Move to first page and shows it. </p>
+<p></br></p>
+<h4 id="movelastpage">MoveLastPage<a class="headerlink" href="#movelastpage" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview.MoveLastPage()
+</code></pre>
+
+<p>Move to last page and shows it.</p>
+<p></br></p>
+<h4 id="movenextpage">MoveNextPage<a class="headerlink" href="#movenextpage" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview.MoveNextPage()
+</code></pre>
+
+<p>Move to next page and shows it. </p>
+<p></br></p>
+<h4 id="movepreviouspage">MovePreviousPage<a class="headerlink" href="#movepreviouspage" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview.MovePreviousPage()
+</code></pre>
+
+<p>Move to previous page and shows it. </p>
+<p></br></p>
+<h4 id="movetopage">MoveToPage<a class="headerlink" href="#movetopage" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview.MoveToPage(nPage As Integer)
+</code></pre>
+
+<p>Move to nPage number and shows it. </p>
+<p></br></p>
+<h4 id="print_1">Print<a class="headerlink" href="#print_1" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview.Print()
+</code></pre>
+
+<p>Print report.</p>
+<p></br></p>
+<h4 id="report_1">Report<a class="headerlink" href="#report_1" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview.Report(rpt As DBReport, SearchPanel As Boolean = False, CacheInRecords As Integer = 1000)
+</code></pre>
+
+<p>Set report to preview. </p>
+<p></br></p>
+<h4 id="showsearchpanel">ShowSearchPanel<a class="headerlink" href="#showsearchpanel" title="Permanent link">♥</a></h4>
+<pre><code class="vb">DBReportPreview.ShowSearchPanel()
+</code></pre>
+
+<p>Shows/hide the searchPanel.</p>
+<h3 id="constants_1">Constants<a class="headerlink" href="#constants_1" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version</td>
+<td>String</td>
+<td>1.4.4407</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="dbreportshared">DBReportShared<a class="headerlink" href="#dbreportshared" title="Permanent link">♥</a></h2></div>
+<h2 id="dbreportshared">DBReportShared<a class="headerlink" href="#dbreportshared" title="Permanent link">♥</a></h2>
+<p>Used for setting third-party products.</p>
+<h3 id="constants_2">Constants<a class="headerlink" href="#constants_2" title="Permanent link">♥</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kBarcodeEngine</td>
+<td>String</td>
+<td>Set to "MBSBarcode" to use plugin, default= "Simbarcodes"</td>
+</tr>
+<tr>
+<td>kConnectionMBSSQL</td>
+<td>Boolean</td>
+<td>Use MBSQL plugin in DataExplorer, default= False</td>
+</tr>
+<tr>
+<td>kConnectionMSSQL</td>
+<td>Boolean</td>
+<td>Use MSSQL plugin in DataExplorer, default= False</td>
+</tr>
+<tr>
+<td>kConnectionMySQL</td>
+<td>Boolean</td>
+<td>Use MySQL plugin in DataExplorer, default= True</td>
+</tr>
+<tr>
+<td>kConnectionODBC</td>
+<td>Boolean</td>
+<td>Use ODBC plugin in DataExplorer, default= False</td>
+</tr>
+<tr>
+<td>kConnectionOracle</td>
+<td>Boolean</td>
+<td>Use Oracle plugin in DataExplorer, default= False</td>
+</tr>
+<tr>
+<td>kConnectionPostgres</td>
+<td>Boolean</td>
+<td>Use Postgres plugin in DataExplorer, default= True</td>
+</tr>
+<tr>
+<td>kConnectionSQLite</td>
+<td>Boolean</td>
+<td>Use SQLite plugin in DataExplorer, default= True</td>
+</tr>
+<tr>
+<td>kConnectionWeb</td>
+<td>Boolean</td>
+<td>Use HTTP in DataExplorer, default= True</td>
+</tr>
+<tr>
+<td>kEditSyntaxHighlightEngine</td>
+<td>String</td>
+<td>Use CEF (custom-editfield) set "CEF", default=""</td>
+</tr>
+<tr>
+<td>kEncryptionEngine</td>
+<td>String</td>
+<td>Use MBSEncryption plugin set "MBS", default= ""</td>
+</tr>
+<tr>
+<td>kForceEncryptBefore2014</td>
+<td>Boolean</td>
+<td>Used REalStudio encryption, default= False</td>
+</tr>
+<tr>
+<td>kRenderEnginePDF</td>
+<td>String</td>
+<td>Set to "MBSDynaPDF" to use plugin, default= "DBReportPDF"</td>
+</tr>
+<tr>
+<td>kScreenShotEngine</td>
+<td>String</td>
+<td>Use MBSPicture set "ScreenshotMBS", default="ScreenShot"</td>
+</tr>
+<tr>
+<td>kzlibPath</td>
+<td>String</td>
+<td>Set the path for zlib shared library</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">♥</a></h3>
+<p>If you use MBSBarcode plugin, You can delete the Simbarcodes file.</p>
+<p>To use MBSDynaPDF plugin:</p>
+<ol>
+<li>Change DBReportShared.kRenderEnginePDF constant to "MBSDynaPDF".</li>
+<li>Add next code after SetLicense, ie:</li>
+</ol>
+<pre><code class="vb">Dim pdf As New DynaPDFMBS // your code
+pdf.SetLicenseKey &quot;Starter&quot; // your code
+' set other pdf options like AddFontSearchPath
+
+' add this code 
+DBReport.PDFObj= pdf // to reuse this object 
+
+' JUST IF YOU NEED CHANGE default options, add next code: 
+'DBReport.PDFOptions.Value(&quot;Codepage&quot;)= DynaPDFMBS.kcpUnicode // change codepage 
+'DBReport.PDFOptions.Value(&quot;EmbedFonts&quot;)= False // not embed fonts
+</code></pre>
+
+<p>You can delete DBReportPDF* files and zlib1.dll from the project. </p></div>
         </div>
 
         <footer class="col-md-12">

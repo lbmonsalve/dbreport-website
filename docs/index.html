@@ -197,7 +197,7 @@ rpt.Prop(&quot;databaseName&quot;)= &quot;MyDB&quot;
 <h3 id="xml_definition_file">XML Definition file<a class="headerlink" href="#xml_definition_file" title="Permanent link">♥</a></h3>
 <p>The definition of report is in XML structure, you can change the extension of file whatever you like. This is an example: </p>
 <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;DBReport Version=&quot;1.3.1007&quot;&gt;
+&lt;DBReport Version=&quot;1.4.4407&quot;&gt;
   &lt;SubReport&gt;
     &lt;Band id=&quot;1&quot; Name=&quot;ReporHeader1&quot; Type=&quot;30&quot;/&gt;
     &lt;Band id=&quot;2&quot; Name=&quot;Detail&quot; Height=&quot;20&quot;/&gt;
@@ -216,9 +216,9 @@ rpt.Prop(&quot;databaseName&quot;)= &quot;MyDB&quot;
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">♥</a></h2>
 <h3 id="modify_report">Modify report<a class="headerlink" href="#modify_report" title="Permanent link">♥</a></h3>
 <p>RecordSet variable "rs" must be exist.</p>
-<pre><code class="vb">Dim rpt As New DBReport
+<pre><code class="vb">Dim f as FolderItem= SpecialFolder.Documents.Child(&quot;DBReport1.xml&quot;)
 
-Dim f as FolderItem= SpecialFolder.Documents.Child(&quot;DBReport1.xml&quot;)
+Dim rpt As New DBReport
 rpt.LoadXML(f)
 rpt.RecordSet= rs
 rpt.Designer
@@ -235,10 +235,9 @@ StringVariable= rpt.GetXML()
 </code></pre>
 
 <h3 id="print_report">Print report<a class="headerlink" href="#print_report" title="Permanent link">♥</a></h3>
-<pre><code class="vb">Dim rpt As DBReport
-Dim f as FolderItem= SpecialFolder.Documents.Child(&quot;DBReport1.xml&quot;)
+<pre><code class="vb">Dim f as FolderItem= SpecialFolder.Documents.Child(&quot;DBReport1.xml&quot;)
 
-rpt= New DBReport(f, rs)
+Dim rpt As New DBReport(f, rs)
 
 rpt.Print
 </code></pre>
@@ -521,5 +520,5 @@ rpt.Print
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-11-11 23:31:14
+Build Date UTC : 2017-11-14 04:57:08
 -->

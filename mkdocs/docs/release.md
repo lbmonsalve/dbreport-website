@@ -1,5 +1,33 @@
 # Release notes
 
+1.4.4407
+
+\* Fix: band.PrintAgainWhenNewPage. in subgroups
+
+1.4.4404
+
+\* Add: band.PrintAgainWhenNewPage.
+
+1.4.4201
+
+\* Add: "64bit" to PDF producer info.
+
+1.4.4115
+
+\- Fix: Int32 cast for enum in 64-bit.
+
+1.4.4001
+
+\* Add: suport for print with SumatraPDF in Windows
+
+1.4.3927
+
+\- Fix: Scale when DPI<> 72 on r2017+.
+
+1.4.3922
+
+\- Fix: Picture field don't print in footer band.
+
 1.4.3509
 
 \* Add: DBReport.ParametersClear.

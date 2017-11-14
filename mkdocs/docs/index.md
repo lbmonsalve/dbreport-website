@@ -121,7 +121,7 @@ The definition of report is in XML structure, you can change the extension of fi
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<DBReport Version="1.3.1007">
+<DBReport Version="1.4.4407">
   <SubReport>
     <Band id="1" Name="ReporHeader1" Type="30"/>
     <Band id="2" Name="Detail" Height="20"/>
@@ -147,9 +147,9 @@ DBReport saves preferences like position of Designer window or zoom in a prefere
 RecordSet variable "rs" must be exist.
 
 ```vb
-Dim rpt As New DBReport
- 
 Dim f as FolderItem= SpecialFolder.Documents.Child("DBReport1.xml")
+
+Dim rpt As New DBReport
 rpt.LoadXML(f)
 rpt.RecordSet= rs
 rpt.Designer
@@ -170,11 +170,10 @@ StringVariable= rpt.GetXML()
 ### Print report
 
 ```vb
-Dim rpt As DBReport
 Dim f as FolderItem= SpecialFolder.Documents.Child("DBReport1.xml")
  
-rpt= New DBReport(f, rs)
- 
+Dim rpt As New DBReport(f, rs)
+
 rpt.Print
 ```
 
