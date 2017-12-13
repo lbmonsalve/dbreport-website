@@ -2,9 +2,12 @@
 
 ---
 
-Is a [Xojo/(Real Basic)](http://www.xojo.com) component for reports.
+Is a [Xojo/RealBasic](http://www.xojo.com) component for reports. Download [here](https://goo.gl/w6kUcw). Bernardo Monsalve: lbmonsalve at outlook . com
 
-[See here](http://dbreport.lbmsoft.com/), download [here](https://goo.gl/w6kUcw) by Bernardo Monsalve.
+**PURCHASES BY PAYPAL:**
+
+Encrypted: [US$70](https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=SAJSKXXB68ENL&lc=CO&item_name=DBReport%20component%20for%20Xojo%20%28RB%29&item_number=1020&amount=70%2e00&currency_code=USD&button_subtype=services&bn=PP%2dBuyNowBF%3abtn_buynowCC_LG%2egif%3aNonHosted) </br>
+Source code: [US$140](https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=SAJSKXXB68ENL&lc=AL&item_name=DBReport%20with%20source%20code&item_number=1030&amount=140%2e00&currency_code=USD&button_subtype=services&bn=PP%2dBuyNowBF%3abtn_buynowCC_LG%2egif%3aNonHosted)
 
 ## Introduction
 
@@ -26,7 +29,7 @@ DBReport is a Xojo (formerly known as Realbasic) component to create, edit and p
 
 ## Requirements
 
-DBReport is pure Xojo (RealBasic) code, don't need plug-ins (however can use [BarcodeMBS](http://www.monkeybreadsoftware.net/class-barcodegeneratormbs.shtml) and [DynaPDFMBS](http://www.monkeybreadsoftware.de/xojo/plugin-dynapdf.shtml)), tested from RealStudio 2011r4 to Xojo 2017r1.1. Cocoa framework on MacOS is required. You need a registration code which is obtained (for free or open-source projects) by sending an email to lbmonsalve at outlook.com, otherwise works in DEMO mode.
+DBReport is pure Xojo (RealBasic) code, don't need plug-ins (however can use [BarcodeMBS](http://www.monkeybreadsoftware.net/class-barcodegeneratormbs.shtml) and [DynaPDFMBS](http://www.monkeybreadsoftware.de/xojo/plugin-dynapdf.shtml)), tested from RealStudio 2011r4 to Xojo 2017r3. Cocoa framework on MacOS is required. You need a registration code which is obtained (for free or open-source projects) by sending an email to lbmonsalve at outlook.com, otherwise works in DEMO mode.
 
 ## Adding the component
 
@@ -451,4 +454,4 @@ rpt.Print
 
 ## Credits
 
-Many people helped me in this project: Rodrigo Erazo, Carlos Hernán Muñoz, Andy Marshman, Wayne Golding, Peter Fargo, Andre Kuiper, Rolf Genster (German corrections), the rhCharts guy, Alwaysbusy's corner (gradient and other stuff), and all of request a demo. 
+Many people helped me in this project: Rodrigo Erazo, Carlos Hernán Muñoz, Andy Marshman, Wayne Golding, Peter Fargo, Andre Kuiper, Rolf Genster (German corrections), the rhCharts guy, Alwaysbusy's corner (gradient and other stuff), and all of request a demo.
