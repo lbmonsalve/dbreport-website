@@ -1,7 +1,7 @@
 site_name: DBReport
 site_description: RealBasic/Xojo component for reports website
 site_author: Bernardo Monsalve
-copyright: Copyright &copy; 2017 Bernardo Monsalve
+copyright: Copyright &copy; 2017 - 2018 Bernardo Monsalve
 pages:
 - Home: index.md
 - Classes: classes.md

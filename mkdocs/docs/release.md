@@ -1,8 +1,26 @@
 # Release notes
 
+1.4.5003
+
+\- Fix BackColor on label/field when align<> left.</br>
+\- Fix AlignH, AlignV on picture element.
+
+DBReportChart 0.0.4830
+
+\- Fix JSONItem arrays error in 2018r1.
+
+DBReportPreview 1.4.4829
+
+\* Change showToolBar to False by default.
+
+1.4.4618
+
+\- Fix: unsupportedException in web apps</br>
+\* Add: Web example
+
 1.4.4407
 
-\* Fix: band.PrintAgainWhenNewPage. in subgroups
+\- Fix: band.PrintAgainWhenNewPage. in subgroups
 
 1.4.4404
 
@@ -30,13 +48,13 @@
 
 1.4.3509
 
-\* Add: DBReport.ParametersClear.
-\- Fix: copies on windows print dialog.
+\* Add: DBReport.ParametersClear.</br>
+\- Fix: copies on windows print dialog.</br>
 \- Fix: Zoom control on mac works.
 
 1.4.3316
 
-\* Add: Preview HiDPI (test).
+\* Add: Preview HiDPI (test).</br>
 \- Fix: drag'n drop on mac (recurrent v1.3.1122).
 
 1.4.3227
@@ -53,9 +71,9 @@
 
 1.4.2823
 
-\* Add import for OnTargetReports on LoadXML(...).
-\* Add Changed Function.
-\* Add better encryption algorithm.
+\* Add import for OnTargetReports on LoadXML(...).</br>
+\* Add Changed Function.</br>
+\* Add better encryption algorithm.</br>
 \* Add support to CEF on formula editor, https://github.com/tempelmann/custom-editfield.
 
 1.4.2819
@@ -65,8 +83,8 @@
 
 1.4.2815
 
-\- Fixed: Error on formula when element names has space.
-\* Add right-click on schema/parameters for deleted.
+\- Fixed: Error on formula when element names has space.</br>
+\* Add right-click on schema/parameters for deleted.</br>
 \* Add drag&drop from schema to canvas.
 
 1.4.2313
@@ -79,7 +97,7 @@
 
 1.4.2226
 
-\* Add MBSDynaPDF support.
+\* Add MBSDynaPDF support.</br>
 \* Constants kBarcodeEngine, kRenderEngineExcel, kRenderEnginePDF on DBReportShared module changed.
 
 1.4.2201
@@ -88,7 +106,7 @@
 
 1.4.1717
 
-\* Add shared property DBReport.RecordSetEncoding.
+\* Add shared property DBReport.RecordSetEncoding.</br>
 \- Fixed MSSQL double issue.
 
 1.4.1428
@@ -97,26 +115,26 @@
 
 1.4.1427
 
-\- Fixed multiline element cause bad behavior.
+\- Fixed multiline element cause bad behavior.</br>
 \- Fixed subtotal on MacOS and Xojo 2014+ round problem.
 
 1.4.1403
 
-\- object exception when print with HotSpot element is enable; fixed.
-\- format of dates on GroupFooter fixed.
+\- object exception when print with HotSpot element is enable; fixed.</br>
+\- format of dates on GroupFooter fixed.</br>
 \* Images resolution enhanced of PDF objs (barcode, rotateText, charts).
 
 1.4.1211
 
-\- "...more than one item with this name..." bug on 2014r3 fixed.
-\- Error on preview when the page # <> 1 fixed.
+\- "...more than one item with this name..." bug on 2014r3 fixed.</br>
+\- Error on preview when the page # <> 1 fixed.</br>
 \- Images on DBReportPDF preserve the resolution now.
 
 1.4.1204
 
-\* Add demo reports from sakila db.
-\* Add unit-test.
-\* Add BarcodeMBS support.
+\* Add demo reports from sakila db.</br>
+\* Add unit-test.</br>
+\* Add BarcodeMBS support.</br>
 \- Leyend on charts fixed
 
 1.4.0917
@@ -125,7 +143,7 @@
 
 1.4.0704
 
-\* Add format on date field: ShortDate,LongDate,ShortTime,LongTime - thanks Wayne.
+\* Add format on date field: ShortDate,LongDate,ShortTime,LongTime - thanks Wayne.</br>
 \- Count issue fixed
 
 1.4.0702
@@ -134,17 +152,17 @@
 
 1.4.0620
 
-\* Add HotSpot areas to DBReportPreview control.
-\* Add Listbox property for using as recordset.
-\* Add support to barcode with Simbarcodes module.
-\* Change icons.
+\* Add HotSpot areas to DBReportPreview control.</br>
+\* Add Listbox property for using as recordset.</br>
+\* Add support to barcode with Simbarcodes module.</br>
+\* Change icons.</br>
 \- Minor bugs fixed.
 
 1.3.1804
 
-\* Add FormatDateTime(stringDateSQLFormat, "format") function to Formula Editor.
-\* Calc height of element when change font size.
-\* Add new elements with last Font Size, height element.
+\* Add FormatDateTime(stringDateSQLFormat, "format") function to Formula Editor.</br>
+\* Calc height of element when change font size.</br>
+\* Add new elements with last Font Size, height element.</br>
 \- Fixed when fieldNumber of recordset are null.
 
 1.3.1625
@@ -157,12 +175,12 @@
 
 1.3.1611
 
-\* Add Field("fieldName"), TotalSeconds("FieldName") Parameter("ParamName") functions to Formula Editor.
+\* Add Field("fieldName"), TotalSeconds("FieldName") Parameter("ParamName") functions to Formula Editor.</br>
 \* Add Sum, Subtotal Functions to labels elements.
 
 1.3.1531
 
-\* Add property DBReport.PictureQualityAllImagesPDF
+\* Add property DBReport.PictureQualityAllImagesPDF</br>
 \- Show negative subtotals issue fixed.
 
 
@@ -180,7 +198,7 @@
 
 1.3.1402
 
-\- Some elements no show on designer, fixed.
+\- Some elements no show on designer, fixed.</br>
 \- Weird scrollBars behavior when delete an element, fixed.
 
 1.3.1311
@@ -189,8 +207,8 @@
 
 1.3.1129
 
-\* Label rotation implemented.
-\* Change DPI implemented.
+\* Label rotation implemented.</br>
+\* Change DPI implemented.</br>
 \- Now works secondary mouse button on Mac.
 
 1.3.1125
@@ -199,43 +217,43 @@
 
 1.3.1122
 
-\* New form to handle lines.
+\* New form to handle lines.</br>
 \- Mac drag'n drop fixed.
 
 1.3.1120
 
-\- Delete band with subreports bug fixed.
+\- Delete band with subreports bug fixed.</br>
 \- Copy and paste between subreports fixed.
 
 1.3.1118
 
 \* SubReports implemented.
-\* New Constructors:DBReport(FolderItem, RecordSet), DBReport(String, RecordSet)
-\* Some methods on DBReportSubReport are deprecated, delete on future releases.
-\* Limits for elements implemented.
-\* Scale images now is proportional.
+\* New Constructors:DBReport(FolderItem, RecordSet), DBReport(String, RecordSet)</br>
+\* Some methods on DBReportSubReport are deprecated, delete on future releases.</br>
+\* Limits for elements implemented.</br>
+\* Scale images now is proportional.</br>
 \* Add Branding: DBReport.BrandName= "Your brand".
 
 1.3.1017
 
-\* Format date fields with user locale format.
-\- ODBC fixed bug.
-\- Print on thread disable on mac.
+\* Format date fields with user locale format.</br>
+\- ODBC fixed bug.</br>
+\- Print on thread disable on mac.</br>
 \- Zoom with wheel on Mac disable.
 
 1.3.1007
 
-\* Register component implemented.
-\* Grid and SnapToGrid implemented.
-\* Print on thread implemented.
-\* Cache on preview +100 (settable) pages on disk.
-\* Propierties implemented.
-\* Translate to German thanks to Rolf Gengster (rgenster@genster.com).
+\* Register component implemented.</br>
+\* Grid and SnapToGrid implemented.</br>
+\* Print on thread implemented.</br>
+\* Cache on preview +100 (settable) pages on disk.</br>
+\* Propierties implemented.</br>
+\* Translate to German thanks to Rolf Gengster (rgenster@genster.com).</br>
 \- Changing size of element on MacOS fixed, others bugs fixed.
 
 1.2.0907
 
-\* Rename "DBReportDesingerControl.rbw" by "DBReportDesignerControl.rbw"
+\* Rename "DBReportDesingerControl.rbw" by "DBReportDesignerControl.rbw"</br>
 \- Wrong Count function value fixed, fixed several bugs
 
 1.2.0830:
@@ -244,7 +262,7 @@
 
 1.2.0725:
 
-\* SendBack implemented, fixed several bugs, new colors.
+\* SendBack implemented, fixed several bugs, new colors.</br>
 \- Images deleted!, no more used.
 
 1.2.0723:
@@ -257,39 +275,39 @@
 
 1.1.0112:
 
-\* Multiline in POS report implemented.
-\* Export/Import from designer implemented.
-\- Fix parcialy/ bug in Listbox 64+ columns.
-\* Show properties in Schema implemented.
+\* Multiline in POS report implemented.</br>
+\* Export/Import from designer implemented.</br>
+\- Fix parcialy/ bug in Listbox 64+ columns.</br>
+\* Show properties in Schema implemented.</br>
 \* Save preferences implemented.
 
 1.0.1220:
 
-\* Measures units implemented.
-\* Columns implemented
-\* Select elements and move with arrows keys implemented.
+\* Measures units implemented.</br>
+\* Columns implemented</br>
+\* Select elements and move with arrows keys implemented.</br>
 \* Show position in ruler implemented.
 
 1.0.1130:
 
-\* Formula editor implemented.
+\* Formula editor implemented.</br>
 \- Fixed bugs: Ctrl+C, Preview, goto N pag.
 
 1.0.1128:
 
-\* Dialog to print implemented.
-\* Print to POS implemented.
+\* Dialog to print implemented.</br>
+\* Print to POS implemented.</br>
 \* Interface change: controls positions.
 
 1.0.1123:
 
-\- Fixed error preview control.
+\- Fixed error preview control.</br>
 \* Goto N page in Preview.
 
 1.0.1112:
 
-\* To set parameter don't need subreport reference, ej: rpt.Parameter("StartDate")= "01/01/2012"
-\* Color change on selected element, Repeat, Show 0, Ctrl+C y Ctrl+V.
+\* To set parameter don't need subreport reference, ej: rpt.Parameter("StartDate")= "01/01/2012"</br>
+\* Color change on selected element, Repeat, Show 0, Ctrl+C y Ctrl+V.</br>
 \* change preview buttons position.
 
 \* Initial release
