@@ -6,7 +6,7 @@ pages:
 - Home: index.md
 - Classes: classes.md
 - About:
-    - Release Notes: release.md
+    - ChangeLog: changelog.md
     - License: license.md
 
 extra_css:
