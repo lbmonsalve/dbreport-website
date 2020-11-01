@@ -1,5 +1,52 @@
 # ChangeLog
 
+1.4.7315
+
+\* Add DBReport.RowSet (Api2 database support)
+
+1.4.6820
+
+\- Fix Align in MBSDynaPDF
+\- Fix multiline preview
+\- Chg DBReportPreview thumbnail
+
+1.4.6611
+
+\* Add RenderToPDFOnBackground to multiple PDF
+\* Add RenderToPDFOnBackgroundCancel
+\- Chg Threads.Priority to HighPriority
+\- Fix DBReportPreview thumbnail blink
+
+DBReportPreview, DBReportDesignerControl 1.4.6106
+
+\- Disable DBReportPreview MouseWheel on MacOS.
+\* Add DBReportPreview.PageMouseWheel event.
+\* Add DBReportDesignerControl.PreviewPageMouseWheel event.
+
+1.4.5612
+
+\- Fix DBReport.PreferencesFile nil in xojoCloud
+
+1.4.5511
+
+\- Fix DarkMode issues
+
+1.4.5308
+
+\- Fix picture element when is parameter (#param)
+
+1.4.5215
+
+\* Add DBReport.WaterMark
+
+1.4.5117
+
+\- Fix mouseOver on element
+
+1.4.5012
+
+\- Fix picture.Backcolor, preview of roundRentangle
+
 1.4.5003
 
 \- Fix BackColor on label/field when align<> left.</br>
